@@ -9,19 +9,61 @@
 </head>
 
 <body>
-    <section>
-        <div class="box-background">
-            <p>Register</p>
-            <div>
-                <p>Name</p>
-                <input type="text" name="Name" id="" placeholder="Enter your name">
-            </div>
-            <div>
-                <p>Email</p>
-                <input type="email" name="Email" id="" placeholder="example@gmail.com">
-            </div>
+    <main class="container">
+
+        <div class="main-section-border" >
+            <form class="main-section" id="page-1">
+                <h1 class="section-title">Register</h1>
+                <section class="input-section">
+                    <label for="name">Name</label>
+                    <input type="text" name="Name" id="name" class="text-input" placeholder="Enter your name" required>
+                </section>
+                <section class="input-section">
+                    <label for="email">Email</label>
+                    <input type="email" name="Email" id="email" class="text-input" placeholder="Example@gmail.com" required pattern=".+@example\.com">
+                </section>
+                <input type="submit" value="Continue" class="submit-button" />
+            </form>
         </div>
-    </section>
+
+        <div class="main-section-border" style="display:none">
+            <form id="topic-form">
+                <h1>Which topics you are interested in?</h1>
+                <input type="button" value="Software Development">
+                <input type="button" value="User Experience">
+                <input type="button" value="Graphic Design">
+                <input type="submit" value="Continue" class="submit-button" />
+            </form>
+        </div>
+
+        <div class="main-section-border" style="display:none">
+            <section class="main-section" id="page-3" style="display:none">
+                <h1 class="section-title">Summary</h1>
+
+                <section class="user-data">
+                    <p>Name: <span>Emily Johnson</span></p>
+                    <p>Email: <span>emily@emilyjohnsonstl.com</span></p>
+                </section>
+
+                <section class="topics">
+                    <p>Topics:</p>
+                    <ul>
+                        <li>User Experience</li>
+                        <li>Graphic Design</li>
+                    </ul>
+                </section>
+
+                <button>Continue</button>
+            </section>
+        </div>
+
+        <section class="stepper">
+            <p>Step 1 of 3</p>
+            <span class="curret-step"></span>
+            <span></span>
+            <span></span>
+        </section>
+    </main>
 </body>
 
 </html>
