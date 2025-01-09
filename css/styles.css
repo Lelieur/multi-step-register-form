@@ -1,150 +1,174 @@
 body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    background: radial-gradient(circle at 30% 40%, #5325af6b 0, transparent 20%), linear-gradient(to right, #121826, #121826) no-repeat;
-    color: white;
-    font-family: 'Inter';
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: radial-gradient(circle at 30% 40%, #5325af6b 0, transparent 20%),
+    linear-gradient(to right, #121826, #121826) no-repeat;
+  color: white;
+  font-family: "Inter";
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-section-border {
-    box-sizing: content-box;
-    border-radius: 10px;
-    padding: 0.5px;
-    background: linear-gradient(-45deg, transparent, transparent, transparent, white);
+  box-sizing: content-box;
+  border-radius: 10px;
+  padding: 0.5px;
+  background: linear-gradient(
+    -45deg,
+    transparent,
+    transparent,
+    transparent,
+    white
+  );
 }
 
-form {
-    background-color: #212936;
-    padding: 2em;
-    width: 50vw;
-    border-radius: 10px;
+form,
+.main-section {
+  background-color: #212936;
+  padding: 2em;
+  width: 50vw;
+  border-radius: 10px;
 }
 
 h1 {
-    font-size: medium;
-    font-weight: normal;
-    margin: 0 0 2em 0;
-    color: white !important;
+  font-size: medium;
+  font-weight: normal;
+  margin: 0 0 2em 0;
+  color: white !important;
 }
 
 .input-section {
-    width: 100%;
-    margin-bottom: 2em;
-    font-size: 0.8em;
-    font-weight: 300;
+  width: 100%;
+  margin-bottom: 2em;
+  font-size: 0.8em;
+  font-weight: 300;
 }
 
 .text-input {
-    margin-top: 1em;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: transparent;
-    padding: 0.9em;
-    border: 1px solid rgba(161, 161, 169, 0.5);
-    border-radius: 8px;
+  color: white;
+  margin-top: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: transparent;
+  padding: 0.9em;
+  border: 1px solid rgba(161, 161, 169, 0.5);
+  border-radius: 8px;
 }
 
 .text-input::placeholder {
-    color: white;
-    font-size: 0.9em;
+  color: #a1a1a9;
+  font-size: 0.9em;
 }
 
 .text-input:focus {
-    outline: none
+  outline: none;
+  color: white;
 }
 
-.submit-button {
-    display: block;
-    margin: 2.5em auto 0 auto;
-    padding: 1em 2rem;
-    background: linear-gradient(0deg, #5425AF, #845EEE);
-    border: none;
-    border-radius: 20px;
-    color: white;
-    font-size: x-small;
+.text-input:focus:invalid {
+  box-shadow: 0 0 5px 1px rgb(255, 0, 0, 0.5);
 }
 
-.submit-button:hover {
-    cursor: pointer;
+.text-input:focus:valid {
+  box-shadow: 0 0 5px 1px rgb(0, 128, 0, 0.5);
 }
 
-.stepper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
+.text-input:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-.stepper p {
-    margin: 0 2em 0 0;
-    font-size: x-small;
-    font-weight: 200;
-    color: #A1A1A9;
+#submit-button {
+  display: block;
+  margin: 2.5em auto 0 auto;
+  padding: 1em 2rem;
+  background: linear-gradient(0deg, #5425af, #845eee);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: x-small;
 }
 
-.stepper span {
-    height: 8px;
-    width: 8px;
-    margin: 0 0.5em 0 0.5em;
-    border-radius: 100%;
-    background-color: #212936;
+#submit-button:hover {
+  cursor: pointer;
 }
 
-.stepper .curret-step {
-    background-color: #5425AF;
-    border: 4px solid #212936
+#stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0 1em 0;
+}
+
+#stepper p {
+  margin: 0 2em 0 0;
+  font-size: x-small;
+  font-weight: 200;
+  color: #a1a1a9;
+}
+
+#stepper span {
+  height: 8px;
+  width: 8px;
+  margin: 0 0.5em 0 0.5em;
+  border-radius: 100%;
+  background-color: #212936;
+  cursor: pointer;
+}
+
+#stepper .curret-step {
+  background-color: #5425af;
+  border: 4px solid #212936;
 }
 
 #topic-form input {
-    display: block;
-    width: 100%;
-    margin-bottom: 1em;
-    color: white;
-    text-align: start;
-    font-size: x-small;
-    font-weight: 100;
-    box-sizing: border-box;
-    background-color: #394150;
-    padding: 1.4em;
-    border: 1px solid rgba(161, 161, 169, 0.5);
-    border-radius: 8px;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  color: white;
+  text-align: start;
+  font-size: x-small;
+  font-weight: 100;
+  box-sizing: border-box;
+  background-color: #394150;
+  padding: 1.4em;
+  border: 1px solid rgba(161, 161, 169, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #topic-form input:focus {
-    background-color: #5425AF;
+  background-color: #5425af;
 }
 
-#page-3 .user-data {
-    margin-bottom: 2em;
+#summary-form .user-data {
+  margin-bottom: 2em;
 }
 
-#page-3 p {
-    margin: 0 0 0.5em 0;
-    color: #A1A1A9;
-    font-size: small;
+#summary-form p {
+  margin: 0 0 0.5em 0;
+  color: #a1a1a9;
+  font-size: small;
 }
 
-#page-3 p span {
-    color: white;
+#summary-form p span {
+  color: white;
 }
 
-#page-3 ul {
-    margin: 0;
-    padding: 0 0 0 1.5em;
+#summary-form ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
 }
 
-#page-3 li {
-    font-size: small;
-    margin-bottom: 0.5em;
+#summary-form li {
+  font-size: small;
+  margin-bottom: 0.5em;
 }
