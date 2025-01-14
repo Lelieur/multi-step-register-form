@@ -10,11 +10,11 @@
   <body>
     <script src="js/script.js" defer></script>
 
-    <main class="container">
-      <div class="main-section-border" id="name-form">
-        <form>
-          <h1 class="section-title">Register</h1>
-          <section class="input-section">
+    <main>
+      <div class="form-border">
+        <form id="name-form">
+          <h1>Register</h1>
+          <section>
             <label for="name">Name</label>
             <input
               type="text"
@@ -28,7 +28,7 @@
               autocomplete="name"
             />
           </section>
-          <section class="input-section">
+          <section>
             <label for="email">Email</label>
             <input
               type="email"
@@ -42,23 +42,23 @@
               autocomplete="email"
             />
           </section>
-          <input type="submit" value="Continue" id="submit-button" />
+          <button id="continue-button">Continue</button>
         </form>
       </div>
 
-      <div class="main-section-border" id="topic-form">
-        <form>
+      <div class="form-border">
+        <form id="topic-form">
           <h1>Which topics you are interested in?</h1>
           <input type="button" value="Software Development" />
           <input type="button" value="User Experience" />
           <input type="button" value="Graphic Design" />
-          <input type="submit" value="Continue" id="submit-button" />
+          <button id="continue-button">Continue</button>
         </form>
       </div>
 
-      <div class="main-section-border" id="summary-form" style="display: none">
-        <section class="main-section">
-          <h1 class="section-title">Summary</h1>
+      <div class="form-border">
+        <form id="summary-form">
+          <h1>Summary</h1>
 
           <section class="user-data">
             <p>Name: <span>Emily Johnson</span></p>
@@ -74,14 +74,14 @@
           </section>
 
           <button id="submit-button">Submit</button>
-        </section>
+        </form>
       </div>
 
       <section id="stepper">
-        <p>Step 1 of 3</p>
-        <span class="curret-step"></span>
-        <span></span>
-        <span></span>
+        <p>Step <span id="step">1</span> of 3</p>
+        <span id="radio"></span>
+        <span id="radio"></span>
+        <span id="radio"></span>
       </section>
     </main>
   </body>

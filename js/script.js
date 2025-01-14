@@ -1,37 +1,31 @@
-const showNameForm = () => {
-  nameForm.style.display = "block";
-  topicForm.style.display = "none";
-  summaryForm.style.display = "none";
-};
+let currentStep = 0;
 
-const showTopicForm = () => {
-  nameForm.style.display = "none";
-  topicForm.style.display = "block";
-  summaryForm.style.display = "none";
-};
-
-const showSummaryForm = () => {
-  nameForm.style.display = "none";
-  topicForm.style.display = "none";
-  summaryForm.style.display = "block";
-};
-
-window.onload = showNameForm;
-
-const continueButton = document.getElementById("submit-button");
-continueButton.addEventListener("click", () => {
-  console.log("Le he dado al botón!");
-});
-
+const forms = document.querySelectorAll("form");
 const stepper = document.getElementById("stepper");
-const firstStep = stepper.querySelectorAll("span")[0];
-const secondStep = stepper.querySelectorAll("span")[1];
-const thirdStep = stepper.querySelectorAll("span")[2];
+const stepNumber = document.getElementById("step");
+const continueButton = document.querySelectorAll("[id=continue-button]");
 
-const nameForm = document.getElementById("name-form");
-const topicForm = document.getElementById("topic-form");
-const summaryForm = document.getElementById("summary-form");
+showStep(currentStep);
 
-firstStep.addEventListener("click", showNameForm);
-secondStep.addEventListener("click", showTopicForm);
-thirdStep.addEventListener("click", showSummaryForm);
+function showStep(step) {
+  Array.from(forms).forEach((form) => {
+    console.log(window.location.hash);
+
+    if (Array.from(forms).indexOf(form) === step) {
+      form.style.display = "block";
+      stepper.querySelectorAll("[id=radio]")[step].className = "current-step";
+      stepNumber.textContent = step + 1;
+    } else {
+      form.style.display = "none";
+      stepper.querySelectorAll("span")[step].classList.remove("current-step");
+    }
+  });
+}
+
+continueButton.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    currentStep++;
+    showStep(currentStep);
+  });
+});
